@@ -1,5 +1,8 @@
 /*
   Francisco Leon
+  Co Sci 290
+  
+  Takes information from the user to begin adventure.
 */
 
 import java.util.Scanner; 
