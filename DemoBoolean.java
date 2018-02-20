@@ -27,6 +27,7 @@ public class DemoBoolean{
     System.out.println(whole * deci); // 6.6
     System.out.println(whole * (int)deci); //6,  (int)deci is example of cast
     System.out.println((int)'a'); //97  
+    System.out.println('a'); //a  
     
    
     //if stuff
