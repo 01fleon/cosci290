@@ -2,7 +2,8 @@
   Francisco Leon
   Co Sci 290
   
-  Takes information from the user to begin adventure.
+  This program runs a text based rpg that puts to use
+  lessons learned in class.
 */
 
 import java.util.Scanner; 
@@ -14,16 +15,9 @@ public class GameDriver{
     String catName = "";
     String direction = "";
     double clownLikeLevel = 0.0;
+    int chance = 0;
     
     //Start Screen
-    /*System.out.println(  "  ___________ __________________     _____ _____________________._.  \n"
-                    +    "  \\_   _____//   _____/\\_   ___ \\   /  _  \\\\______   \\_   _____/| | \n"
-                     +   "   |    __)_ \\_____  \\ /    \\  \\/  /  /_\\  \\|     ___/|    __)_ | | \n"
-                      +  "   |        \\/        \\\\     \\____/    |    \\    |    |        \\ \\| \n"
-                       + "  /_______  /_______  / \\______  /\\____|__  /____|   /_______  / __ \n"
-                        +"          \\/        \\/         \\/         \\/                 \\/  \\/ \n"
-                        );
-    */
     System.out.println( "      @@@        @@@@@@    @@@@@@   @@@@@@@   \n"+
                         "      @@@       @@@@@@@@  @@@@@@@   @@@@@@@   \n"+
                         "      @@!       @@!  @@@  !@@         @@!     \n"+
@@ -49,7 +43,12 @@ public class GameDriver{
                        );
                                                    
     // intro story 
-    //System.out.println("");
+    System.out.println("Bored out of your mind one night, you decided to go out on a stroll.\n" +
+                       "Feeling the need for fresh air, you continue to walk far into the forest.\n"+
+                       "The scent of cotton candy and popcorn hits your nose. Following the scent, \n"+
+                       "you stumble across an enormous red and white striped circus tent. You walk in.\n"+
+                       "Surrounded by amusing lights and joyous music, you begin to relax. In that\n"+
+                       "moment...HONK!!hAHahahahha..everything goes dark.\n \n");
     
     
     //User info/set up
@@ -83,9 +82,9 @@ public class GameDriver{
     System.out.println("There's a lot of dust.\n" + "Oh, you feel a sneeze coming on.\n"
                       + "ahhh\nahhHHHHhh\nCHUUUUU!");
     
-    int chance = 1 + (int)(Math.random() * (100 - 1));
+    chance = 1 + (int)(Math.random() * (100 - 1));
     if(chance >= 30){
-      System.out.println("\nMEOW~\n" + catName + " got scared and ran the room.");
+      System.out.println("\nMEOW~\n" + catName + " got scared and ran out the room.");
     }
     else{
       System.out.println("\nIn the distance you hear a low whisper say... bless you.");
