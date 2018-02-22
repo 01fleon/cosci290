@@ -16,11 +16,13 @@ public class PracticeArea{
     }
     else System.out.println("assignment can NOT be used as condition.");
     */
+    
     int x=3, y=3;
     switch(x + 3){
-      case 6: y=1;
+      case 6: y=1; //it falls through cause no break
       default:  y+=1;  
     }
     System.out.println("X is: " + x + "\nY is: " + y);
   }
+ 
 }
