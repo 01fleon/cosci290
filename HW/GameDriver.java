@@ -16,7 +16,7 @@ public class GameDriver{
     String direction = "";
     double clownLikeLevel = 0.0;
     int chance = 0;
-    
+    /*
     //Start Screen
     System.out.println( "      @@@        @@@@@@    @@@@@@   @@@@@@@   \n"+
                         "      @@@       @@@@@@@@  @@@@@@@   @@@@@@@   \n"+
@@ -89,7 +89,48 @@ public class GameDriver{
     else{
       System.out.println("\nIn the distance you hear a low whisper say... bless you.");
     }
+    */
     
+    //Lab7
+    Player[] NonImportantPlayers = new Player[2];
+    //Default weapons
+    Weapon noWeapon = new Weapon("none",0);
+    Armor noArmor = new Armor("none",0);
+    Item noItem = new Item("none",0,0,0);
+    //NPC set up
+    Player Npc1 = new Player("Hugo", "Lee", "Druid", 76, noWeapon, noArmor, noItem);
+    Player Npc2 = new Player("Tak", "Zoo", "Mage", 600, noWeapon, noArmor, noItem);
+    
+    NonImportantPlayers[0] = Npc1;
+    NonImportantPlayers[1] = Npc2;
+    
+    /*
+    Npc1.setStrength(1 + (int)(Math.random() * (20 - 1)));
+    System.out.println("Strength: " + Npc1.getStrength());
+    System.out.println("attack: " + Npc1.getTotalAttack());
+    */
+    
+    for(int index = 0; index < NonImportantPlayers.length; index++){
+       NonImportantPlayers[index].setHitPoints(1 + (int)(Math.random() * (20 - 1)));
+       System.out.println("Hit points: " + NonImportantPlayers[index].getHitPoints());
+    }
+    
+    
+    /*for(Player Npc: NonImportantPlayers){
+      Npc.setHitPoints(1 + (int)(Math.random() * (20 - 1)));
+      Npc.setStrength(1 + (int)(Math.random() * (20 - 1)));
+      Npc.setToughness(1 + (int)(Math.random() * (20 - 1)));
+      Npc.setIntelligence(1 + (int)(Math.random() * (20 - 1)));
+    }
+    int i = 1;
+    for(Player Npc: NonImportantPlayers){
+      System.out.println(Npc.getFirstName() + " " + Npc.getLastName() + " attributes:");
+      System.out.println("Hit points: " + Npc.getHitPoints());
+      //System.out.println("Strength: " + Npc.getStrength());
+      System.out.println("getToughness: " + Npc.getToughness());
+      System.out.println("Intelligence: " + Npc.getIntelligence());
+    }
+    */
     //Game over
     System.out.println(   " _____                        _____                \n"+
                           "|  __ \\                      |  _  |               \n"+
