@@ -16,7 +16,7 @@ public class GameDriver{
     String direction = "";
     double clownLikeLevel = 0.0;
     int chance = 0;
-    /*
+    
     //Start Screen
     System.out.println( "      @@@        @@@@@@    @@@@@@   @@@@@@@   \n"+
                         "      @@@       @@@@@@@@  @@@@@@@   @@@@@@@   \n"+
@@ -89,8 +89,7 @@ public class GameDriver{
     else{
       System.out.println("\nIn the distance you hear a low whisper say... bless you.");
     }
-    */
-    
+        
     //Lab7
     Player[] NonImportantPlayers = new Player[2];
     //Default weapons
@@ -104,11 +103,11 @@ public class GameDriver{
     NonImportantPlayers[0] = Npc1;
     NonImportantPlayers[1] = Npc2;
     
-    /*
+    
     Npc1.setStrength(1 + (int)(Math.random() * (20 - 1)));
     System.out.println("Strength: " + Npc1.getStrength());
     System.out.println("attack: " + Npc1.getTotalAttack());
-    */
+    
     
     for(int index = 0; index < NonImportantPlayers.length; index++){
        NonImportantPlayers[index].setHitPoints(1 + (int)(Math.random() * (20 - 1)));
@@ -142,5 +141,6 @@ public class GameDriver{
   
       
   }
+  
   
 }

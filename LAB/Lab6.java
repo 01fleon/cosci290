@@ -51,7 +51,7 @@ public class Lab6{
     //Cool new Foreach loop way
     int i=1;
     for(Student e: profile){
-      System.out.println("\nStudent " + i + " information:");
+      System.out.println("\nStudent " + (i++) + " information:");
       System.out.println("Major: " + e.getMajor());
       System.out.println("Gpa: " + e.getGpa());
     }
