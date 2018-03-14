@@ -82,15 +82,22 @@ public class GameDriver{
     System.out.println("There's a lot of dust.\n" + "Oh, you feel a sneeze coming on.\n"
                       + "ahhh\nahhHHHHhh\nCHUUUUU!");
     
-    chance = 1 + (int)(Math.random() * (100 - 1));
-    if(chance >= 30){
+    
+    if(chance(1,100)){
       System.out.println("\nMEOW~\n" + catName + " got scared and ran out the room.");
     }
     else{
       System.out.println("\nIn the distance you hear a low whisper say... bless you.");
     }
         
-    //Lab7
+    //Lab 7 working part
+    for(int index = 0; index < NonImportantPlayers.length; index++){
+       NonImportantPlayers[index].setHitPoints(1 + (int)(Math.random() * (20 - 1)));
+       System.out.println("Hit points: " + NonImportantPlayers[index].getHitPoints());
+    }
+    
+    //Lab 7 part in progress
+    /*
     Player[] NonImportantPlayers = new Player[2];
     //Default weapons
     Weapon noWeapon = new Weapon("none",0);
@@ -108,14 +115,10 @@ public class GameDriver{
     System.out.println("Strength: " + Npc1.getStrength());
     System.out.println("attack: " + Npc1.getTotalAttack());
     
-    
-    for(int index = 0; index < NonImportantPlayers.length; index++){
-       NonImportantPlayers[index].setHitPoints(1 + (int)(Math.random() * (20 - 1)));
-       System.out.println("Hit points: " + NonImportantPlayers[index].getHitPoints());
-    }
+   
     
     
-    /*for(Player Npc: NonImportantPlayers){
+    for(Player Npc: NonImportantPlayers){
       Npc.setHitPoints(1 + (int)(Math.random() * (20 - 1)));
       Npc.setStrength(1 + (int)(Math.random() * (20 - 1)));
       Npc.setToughness(1 + (int)(Math.random() * (20 - 1)));
@@ -130,6 +133,7 @@ public class GameDriver{
       System.out.println("Intelligence: " + Npc.getIntelligence());
     }
     */
+    
     //Game over
     System.out.println(   " _____                        _____                \n"+
                           "|  __ \\                      |  _  |               \n"+
@@ -140,6 +144,10 @@ public class GameDriver{
                         );
   
       
+  }
+  //Lab8 function to clean up code
+  public static int chance(int start, int end){
+    return start + (int)(Math.random() * (end - start));
   }
   
   
