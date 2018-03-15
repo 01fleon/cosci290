@@ -83,7 +83,7 @@ public class GameDriver{
                       + "ahhh\nahhHHHHhh\nCHUUUUU!");
     
     
-    if(chance(1,100)){
+    if(chance(1,100) >30){
       System.out.println("\nMEOW~\n" + catName + " got scared and ran out the room.");
     }
     else{
@@ -91,32 +91,36 @@ public class GameDriver{
     }
         
     //Lab 7 working part
+    /*
     for(int index = 0; index < NonImportantPlayers.length; index++){
        NonImportantPlayers[index].setHitPoints(1 + (int)(Math.random() * (20 - 1)));
        System.out.println("Hit points: " + NonImportantPlayers[index].getHitPoints());
     }
-    
+    */
     //Lab 7 part in progress
-    /*
-    Player[] NonImportantPlayers = new Player[2];
+    
+    Human[] NonImportantPlayers = new Human[2];
     //Default weapons
+    /*
     Weapon noWeapon = new Weapon("none",0);
     Armor noArmor = new Armor("none",0);
     Item noItem = new Item("none",0,0,0);
+    */
     //NPC set up
-    Player Npc1 = new Player("Hugo", "Lee", "Druid", 76, noWeapon, noArmor, noItem);
-    Player Npc2 = new Player("Tak", "Zoo", "Mage", 600, noWeapon, noArmor, noItem);
+    Human Npc1 = new Human("Jack","Lok", chance(1,100));
+    Human Npc2 = new Human("Hang","Mang", chance(1,100));
     
     NonImportantPlayers[0] = Npc1;
     NonImportantPlayers[1] = Npc2;
     
-    
+    System.out.println("People: ");
+    for(Human Npc: NonImportantPlayers){
+      System.out.println(Npc.fullName() + " Age: " + Npc.getAge());
+    }
+    /*
     Npc1.setStrength(1 + (int)(Math.random() * (20 - 1)));
     System.out.println("Strength: " + Npc1.getStrength());
     System.out.println("attack: " + Npc1.getTotalAttack());
-    
-   
-    
     
     for(Player Npc: NonImportantPlayers){
       Npc.setHitPoints(1 + (int)(Math.random() * (20 - 1)));
@@ -124,6 +128,7 @@ public class GameDriver{
       Npc.setToughness(1 + (int)(Math.random() * (20 - 1)));
       Npc.setIntelligence(1 + (int)(Math.random() * (20 - 1)));
     }
+    
     int i = 1;
     for(Player Npc: NonImportantPlayers){
       System.out.println(Npc.getFirstName() + " " + Npc.getLastName() + " attributes:");
