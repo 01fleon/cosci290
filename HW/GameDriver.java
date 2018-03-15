@@ -90,16 +90,29 @@ public class GameDriver{
       System.out.println("\nIn the distance you hear a low whisper say... bless you.");
     }
         
-    //Lab 7 working part
-    /*
+    //Lab 7 The human parts
+    
+    Human[] NonImportantPlayers = new Human[2];
+    //Making 2 humans
+    Human Npc1 = new Human("Jack","Lok", chance(1,100));
+    Human Npc2 = new Human("Hang","Mang", chance(1,100));
+    
+    NonImportantPlayers[0] = Npc1;
+    NonImportantPlayers[1] = Npc2;
+    //printing human names
+    System.out.println("People: ");
+    for(Human Npc: NonImportantPlayers){
+      System.out.println(Npc.fullName() + " Age: " + Npc.getAge());
+    }
+    
+    //Things thinking about using
+    
+    /* Might use this when Player object is finsihed
     for(int index = 0; index < NonImportantPlayers.length; index++){
        NonImportantPlayers[index].setHitPoints(1 + (int)(Math.random() * (20 - 1)));
        System.out.println("Hit points: " + NonImportantPlayers[index].getHitPoints());
     }
     */
-    //Lab 7 part in progress
-    
-    Human[] NonImportantPlayers = new Human[2];
     //Default weapons
     /*
     Weapon noWeapon = new Weapon("none",0);
@@ -107,16 +120,7 @@ public class GameDriver{
     Item noItem = new Item("none",0,0,0);
     */
     //NPC set up
-    Human Npc1 = new Human("Jack","Lok", chance(1,100));
-    Human Npc2 = new Human("Hang","Mang", chance(1,100));
-    
-    NonImportantPlayers[0] = Npc1;
-    NonImportantPlayers[1] = Npc2;
-    
-    System.out.println("People: ");
-    for(Human Npc: NonImportantPlayers){
-      System.out.println(Npc.fullName() + " Age: " + Npc.getAge());
-    }
+
     /*
     Npc1.setStrength(1 + (int)(Math.random() * (20 - 1)));
     System.out.println("Strength: " + Npc1.getStrength());
