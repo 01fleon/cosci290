@@ -1,0 +1,23 @@
+Project Name: Last Laugh
+Project Type: Text-Based RPG
+
+Team members: Francisco Leon(me)
+              Lynn Takahashi
+              Mike Plata
+
+Object list:
+Armor
+Cloak
+Fighter
+Human
+Knife
+LeatherArmor
+LightArmor
+MagicUser
+MagicalBlast
+Player
+Rogue
+Spell
+Sword
+Weapon
+  
