@@ -12,45 +12,15 @@ public class GameDriver{
   public static void main(String[] args){
     
     String name = "";
+    
     String catName = "";
     String direction = "";
     double clownLikeLevel = 0.0;
-    int chance = 0;
-    
-    //Start Screen
-    System.out.println( "      @@@        @@@@@@    @@@@@@   @@@@@@@   \n"+
-                        "      @@@       @@@@@@@@  @@@@@@@   @@@@@@@   \n"+
-                        "      @@!       @@!  @@@  !@@         @@!     \n"+
-                        "      !@!       !@!  @!@  !@!         !@!     \n"+
-                        "      @!!       @!@!@!@!  !!@@!!      @!!     \n"+
-                        "      !!!       !!!@!!!!   !!@!!!     !!!     \n"+
-                        "      !!:       !!:  !!!       !:!    !!:     \n"+
-                        "       :!:      :!:  !:!      !:!     :!:     \n"+
-                        "       :: ::::  ::   :::  :::: ::      ::     \n"+  
-                        "      : :: : :   :   : :  :: : :       :      \n"+
+        
 
-
-                        "@@@        @@@@@@   @@@  @@@   @@@@@@@@  @@@  @@@  \n"+
-                        "@@@       @@@@@@@@  @@@  @@@  @@@@@@@@@  @@@  @@@  \n"+
-                        "@@!       @@!  @@@  @@!  @@@  !@@        @@!  @@@  \n"+
-                        "!@!       !@!  @!@  !@!  @!@  !@!        !@!  @!@  \n"+
-                        "@!!       @!@!@!@!  @!@  !@!  !@! @!@!@  @!@!@!@!  \n"+
-                        "!!!       !!!@!!!!  !@!  !!!  !!! !!@!!  !!!@!!!!  \n"+
-                        "!!:       !!:  !!!  !!:  !!!  :!!   !!:  !!:  !!!  \n"+
-                        " :!:      :!:  !:!  :!:  !:!  :!:   !::  :!:  !:!  \n"+
-                        " :: ::::  ::   :::  ::::: ::   ::: ::::  ::   :::  \n"+
-                        ": :: : :   :   : :   : :  :    :: :: :    :   : :  \n"
-                       );
-                                                   
-    // intro story 
-    System.out.println("Bored out of your mind one night, you decided to go out on a stroll.\n" +
-                       "Feeling the need for fresh air, you continue to walk far into the forest.\n"+
-                       "The scent of cotton candy and popcorn hits your nose. Following the scent, \n"+
-                       "you stumble across an enormous red and white striped circus tent. You walk in.\n"+
-                       "Surrounded by amusing lights and joyous music, you begin to relax. In that\n"+
-                       "moment...HONK!!hAHahahahha..everything goes dark.\n \n");
-    
-    
+   splashPage("title");
+   splashPage("intro");                                                   
+      
     //User info/set up
     System.out.print("You've been passed out for 3 days.\n" + "What's your name? ");
     Scanner input = new Scanner(System.in);
@@ -59,19 +29,10 @@ public class GameDriver{
     System.out.print(name + ", on a scale of 1 to 10, how much do you like clowns? ");
     clownLikeLevel = input.nextDouble();
     System.out.print(clownLikeLevel + " out of 10? Great! \nCause this place is full of them!\n \n"
-                    + "Also, here's a cat.\n"+
-                    "       ,     ,                   \n"+                
-                    "       |\\.\"./|                 \n"+
-                    "      /       \\                 \n"+
-                    "     /  _   _  \\   ______       \n"+
-                    "     \\==  Y  ==/\"'`      `.    \n"+
-                    "     /`-._^_.-'\\     ,-  . \\   \n"+
-                    "    /     `     \\   /     \\ \\ \n"+
-                    "    \\  \\.___./  /_ _\\     / / \n"+
-                    "     `, \\   / ,'  (,-----' /   \n"+
-                    "       \"\"' '\"\"     '------'  \n"+
-                    "What's it's name? "
-                    );
+                    + "Also, here's a cat.\n");
+    splashPage("cat");
+    
+    System.out.print("What's it's name? ");
     catName = input.next();
     System.out.print("\nLooks like " + name + " and " + catName + " are ready!\n"
                     + "Which direction do you head in? ");
@@ -92,20 +53,29 @@ public class GameDriver{
         
     //Lab 7 The human parts
     
-    Human[] NonImportantPlayers = new Human[2];
-    //Making 2 humans
+    Human[] NonImportantPlayers = new Human[3];
+    //Making humans
     Human Npc1 = new Human("Jack","Lok", chance(1,100));
     Human Npc2 = new Human("Hang","Mang", chance(1,100));
+    Human Npc3 = new Human("Leaf","Jones", chance(1,100));
     
     NonImportantPlayers[0] = Npc1;
     NonImportantPlayers[1] = Npc2;
-    //printing human names
-    System.out.println("People: ");
-    for(Human Npc: NonImportantPlayers){
-      System.out.println(Npc.fullName() + " Age: " + Npc.getAge());
-    }
+    NonImportantPlayers[2] = Npc3;
     
-    //Things thinking about using
+    //printing human names
+    for(Human Npc: NonImportantPlayers){
+      Npc.printHuman();
+    }
+    /* Thinking about a find human function that searches and returns
+        an object in my array
+    System.out.println("Who do you choose to aid you?\nCall their first name: " );
+    String helper1 = input.next();
+    findHuman(helper1,NonImportantPlayers).printHuman();
+    System.out.println("has joined your party.");
+    */
+    
+    //Things thinking about using, not really sure on direction of game
     
     /* Might use this when Player object is finsihed
     for(int index = 0; index < NonImportantPlayers.length; index++){
@@ -143,21 +113,77 @@ public class GameDriver{
     }
     */
     
-    //Game over
-    System.out.println(   " _____                        _____                \n"+
-                          "|  __ \\                      |  _  |               \n"+
-                          "| |  \\/ __ _ _ __ ___   ___  | | | |_   _____ _ __ \n"+
-                          "| | __ / _` | '_ ` _ \\ / _ \\ | | | \\ \\ / / _ \\ '__|\n"+
-                          "| |_\\ \\ (_| | | | | | |  __/ \\ \\_/ /\\ V /  __/ |   \n"+
-                          " \\____/\\__,_|_| |_| |_|\\___|  \\___/  \\_/ \\___|_|   "
-                        );
+    splashPage("gameover");
+    
   
       
   }
-  //Lab8 function to clean up code
+  //Lab8 functions to clean up code
   public static int chance(int start, int end){
     return start + (int)(Math.random() * (end - start));
   }
   
+  public static void splashPage(String scene){
+    switch(scene){
+      case "title" :  
+            System.out.println( "      @@@        @@@@@@    @@@@@@   @@@@@@@   \n"+
+                                "      @@@       @@@@@@@@  @@@@@@@   @@@@@@@   \n"+
+                                "      @@!       @@!  @@@  !@@         @@!     \n"+
+                                "      !@!       !@!  @!@  !@!         !@!     \n"+
+                                "      @!!       @!@!@!@!  !!@@!!      @!!     \n"+
+                                "      !!!       !!!@!!!!   !!@!!!     !!!     \n"+
+                                "      !!:       !!:  !!!       !:!    !!:     \n"+
+                                "       :!:      :!:  !:!      !:!     :!:     \n"+
+                                "       :: ::::  ::   :::  :::: ::      ::     \n"+  
+                                "      : :: : :   :   : :  :: : :       :      \n"+
+
+
+                                "@@@        @@@@@@   @@@  @@@   @@@@@@@@  @@@  @@@  \n"+
+                                "@@@       @@@@@@@@  @@@  @@@  @@@@@@@@@  @@@  @@@  \n"+
+                                "@@!       @@!  @@@  @@!  @@@  !@@        @@!  @@@  \n"+
+                                "!@!       !@!  @!@  !@!  @!@  !@!        !@!  @!@  \n"+
+                                "@!!       @!@!@!@!  @!@  !@!  !@! @!@!@  @!@!@!@!  \n"+
+                                "!!!       !!!@!!!!  !@!  !!!  !!! !!@!!  !!!@!!!!  \n"+
+                                "!!:       !!:  !!!  !!:  !!!  :!!   !!:  !!:  !!!  \n"+
+                                " :!:      :!:  !:!  :!:  !:!  :!:   !::  :!:  !:!  \n"+
+                                " :: ::::  ::   :::  ::::: ::   ::: ::::  ::   :::  \n"+
+                                ": :: : :   :   : :   : :  :    :: :: :    :   : :  \n"); 
+                                break;
+      case "intro" :
+            System.out.println("Bored out of your mind one night, you decided to go out on a stroll.\n" +
+                       "Feeling the need for fresh air, you continue to walk far into the forest.\n"+
+                       "The scent of cotton candy and popcorn hits your nose. Following the scent, \n"+
+                       "you stumble across an enormous red and white striped circus tent. You walk in.\n"+
+                       "Surrounded by amusing lights and joyous music, you begin to relax. In that\n"+
+                       "moment...HONK!!hAHahahahha..everything goes dark.\n \n"); 
+                                break;
+      case "cat" : 
+            System.out.print( "       ,     ,                   \n"+                
+                              "       |\\.\"./|                 \n"+
+                              "      /       \\                 \n"+
+                              "     /  _   _  \\   ______       \n"+
+                              "     \\==  Y  ==/\"'`      `.    \n"+
+                              "     /`-._^_.-'\\     ,-  . \\   \n"+
+                              "    /     `     \\   /     \\ \\ \n"+
+                              "    \\  \\.___./  /_ _\\     / / \n"+
+                              "     `, \\   / ,'  (,-----' /   \n"+
+                              "       \"\"' '\"\"     '------'  \n");
+                                break;
+      case "gameover" :
+            System.out.println(   " _____                        _____                \n"+
+                                  "|  __ \\                      |  _  |               \n"+
+                                  "| |  \\/ __ _ _ __ ___   ___  | | | |_   _____ _ __ \n"+
+                                  "| | __ / _` | '_ ` _ \\ / _ \\ | | | \\ \\ / / _ \\ '__|\n"+
+                                  "| |_\\ \\ (_| | | | | | |  __/ \\ \\_/ /\\ V /  __/ |   \n"+
+                                  " \\____/\\__,_|_| |_| |_|\\___|  \\___/  \\_/ \\___|_|");
+                                break; 
+    }
+  }
+  public static Human findHuman(String firstName, Human[] people){
+    for(Human x : people){
+      if(x.getFirstName() == firstName) return x;
+    }
+    return null;
+  }
   
 }
