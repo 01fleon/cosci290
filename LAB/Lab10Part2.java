@@ -12,6 +12,8 @@ public class Lab10Part2{
 
     double[] numbers = new double[10];
     Scanner input = new Scanner(System.in);
+    
+    //asks for numbers ten times
     for(int i=0; i<10; i++){
       System.out.println("Enter a number: ");
       numbers[i] = input.nextDouble();

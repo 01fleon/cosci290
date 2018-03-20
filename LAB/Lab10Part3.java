@@ -12,8 +12,9 @@ public class Lab10Part3{
      
     ArrayList<Double> numbers = new ArrayList<Double>();
     
-    //Double.parseDouble(args[0]);
+    //gets and stores numbers from command line
     for(int i=0; i<args.length; i++){
+      //changes args stuff into doubles
       numbers.add(Double.parseDouble(args[i]));
       //System.out.println(Double.parseDouble(args[i]));
     }
