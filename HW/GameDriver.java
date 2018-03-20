@@ -6,7 +6,7 @@
   lessons learned in class.
 */
 
-import java.util.Scanner; 
+import java.util.*; 
 
 public class GameDriver{
   public static void main(String[] args){
@@ -51,22 +51,24 @@ public class GameDriver{
       System.out.println("\nIn the distance you hear a low whisper say... bless you.");
     }
         
-    //Lab 7 The human parts
+    //Lab 10 The human parts done with ArrayList  
     
-    Human[] NonImportantPlayers = new Human[3];
     //Making humans
     Human Npc1 = new Human("Jack","Lok", chance(1,100));
     Human Npc2 = new Human("Hang","Mang", chance(1,100));
     Human Npc3 = new Human("Leaf","Jones", chance(1,100));
     
-    NonImportantPlayers[0] = Npc1;
-    NonImportantPlayers[1] = Npc2;
-    NonImportantPlayers[2] = Npc3;
+    ArrayList<Human> NonImportantPlayers = new ArrayList<Human>();
     
+    NonImportantPlayers.add(Npc1);
+    NonImportantPlayers.add(Npc2);
+    NonImportantPlayers.add(Npc3);
+  
     //printing human names
     for(Human Npc: NonImportantPlayers){
       Npc.printHuman();
     }
+        
     /* Thinking about a find human function that searches and returns
         an object in my array
     System.out.println("Who do you choose to aid you?\nCall their first name: " );
@@ -114,9 +116,7 @@ public class GameDriver{
     */
     
     splashPage("gameover");
-    
-  
-      
+          
   }
   //Lab8 functions to clean up code
   public static int chance(int start, int end){
