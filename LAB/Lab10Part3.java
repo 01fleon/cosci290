@@ -22,16 +22,16 @@ public class Lab10Part3{
     System.out.println("Average of numbers: " + average(numbers));    
     
   }
-  /*
-  couldn't overload for reason
-  public static int average(ArrayList<Integer> array){
+  
+  //couldn't overload this one for some reason
+  public static int average(int[] array){
     int sum = 0;
     for(int number: array){
       sum += number;
     }
-    return sum/array.size();
+    return sum/array.length;
   }
-  */
+  
   public static double average(ArrayList<Double> array){
     double sum = 0.0;
     for(double number: array){
