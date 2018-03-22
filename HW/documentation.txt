@@ -26,5 +26,10 @@ HW2:
   
 HW3:
   Summary
-  Our game is about... killer clowns, cats, dnd stuff. help~
-  
+  Our games theme involves killer clowns, cats, and fantasy for the most part.
+  The player will be able to build a character with some classes as options. The
+  world has magic and clowns involved. Clowns act as the player's main enemy. The
+  player interacts with the world by placed in rooms that just lead into more rooms. 
+  Normally to exit the room a task/fight/puzzle must be done. The player is 
+  accompanied/follows a cat. Plots in the story are affected by the players 
+  relationship with the cat. *still very much in development*
