@@ -22,7 +22,7 @@ public class Lab11{
     int listSize = input.nextInt();
   
     int[] list = new int[listSize];
-    //loads the folloeing numbers into list 
+    //loads the following numbers into list 
     for(int i=0; i< listSize; i++){
       list[i] = input.nextInt();
     }
