@@ -26,9 +26,12 @@ public class GameDriver{
     //User info/set up
     System.out.print("You've been passed out for 3 days.\n" + "What's your name? ");
     Scanner input = new Scanner(System.in);
-    name = input.next();
+    //name = input.next();
     
-    System.out.print(name + ", on a scale of 1 to 10, how much do you like clowns? ");
+    tool.TestWriteFile(input.next());    
+    tool.readFile("testWriting.txt"); //cool works
+    System.out.print( ", on a scale of 1 to 10, how much do you like clowns? ");
+    
     clownLikeLevel = input.nextDouble();
     System.out.print(clownLikeLevel + " out of 10? Great! \nCause this place is full of them!\n \n"
                     + "Also, here's a cat.\n");

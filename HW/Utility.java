@@ -1,17 +1,19 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Utility{
-  /*
-    This method opens a file and prints each line
-  */
+  
+  //This method opens a file and prints each line
   public void readFile(String filename){
     String currentLine;
     
     try(BufferedReader br = new BufferedReader(new FileReader(filename))){
       while( (currentLine = br.readLine()) != null){
-        System.out.println(currentLine);
+        //can do some sort of check here for special characters
+        System.out.print(currentLine);
       }
       
     }catch(IOException e){
@@ -19,9 +21,24 @@ public class Utility{
     }
     
   }
-  public static int chance(int start, int end){
+  //gives random int in a given interval
+  public int chance(int start, int end){
       return start + (int)(Math.random() * (end - start));
-    }  
+    }
+  //lab 14
+  public void TestWriteFile(String userInfo){
+    String FILENAME = "testWriting.txt";
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(FILENAME))){
+			//String content = "This is the content to write into file\n";
+			bw.write(userInfo);
+			//System.out.println("Done");
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+  //ascii 
   public void splashPage(String scene){
     switch(scene){
     case "title" :  
