@@ -24,7 +24,7 @@ public class Utility{
   //gives random int in a given interval
   public int chance(int start, int end){
       return start + (int)(Math.random() * (end - start));
-    }
+  }
   //lab 14
   public void TestWriteFile(String userInfo){
     String FILENAME = "testWriting.txt";
@@ -36,8 +36,8 @@ public class Utility{
 			e.printStackTrace();
 		}
 	}
-
-
+  
+ 
   //ascii 
   public void splashPage(String scene){
     switch(scene){

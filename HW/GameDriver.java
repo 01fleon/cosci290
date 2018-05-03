@@ -2,7 +2,7 @@
   Francisco Leon
   Co Sci 290
   
-  This program runs a text based rpg that puts to use
+  Scratch work for a program that runs a text based rpg that puts to use
   lessons learned in class.
 */
 
@@ -30,9 +30,19 @@ public class GameDriver{
     
     tool.TestWriteFile(input.next());    
     tool.readFile("testWriting.txt"); //cool works
-    System.out.print( ", on a scale of 1 to 10, how much do you like clowns? ");
+    System.out.print( ", on a scale of 0 to 10, how much do you like clowns? ");
     
     clownLikeLevel = input.nextDouble();
+    
+    //LAB 18
+    //check if user input is valid (i.e. from 0 to 10)
+    //check to make sure it's a number coming soon!
+    while( !((clownLikeLevel <=10) && (clownLikeLevel >=0)) ){
+      System.out.print("\nI asked on a scale of 0 to 10.\n" + "Try again: ");      
+      clownLikeLevel = input.nextDouble();
+    }
+    //
+    
     System.out.print(clownLikeLevel + " out of 10? Great! \nCause this place is full of them!\n \n"
                     + "Also, here's a cat.\n");
     tool.splashPage("cat");
