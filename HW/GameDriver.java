@@ -10,12 +10,10 @@ import java.util.*;
 
 public class GameDriver{
   public static void main(String[] args){
-    
     String name = "";
-    
     String catName = "";
     String direction = "";
-    double clownLikeLevel = 0.0;
+    String clownLikeLevel = "";
     Utility tool = new Utility();
         
 
@@ -32,14 +30,13 @@ public class GameDriver{
     tool.readFile("testWriting.txt"); //cool works
     System.out.print( ", on a scale of 0 to 10, how much do you like clowns? ");
     
-    clownLikeLevel = input.nextDouble();
+    clownLikeLevel = input.next();
     
     //LAB 18
     //check if user input is valid (i.e. from 0 to 10)
-    //check to make sure it's a number coming soon!
-    while( !((clownLikeLevel <=10) && (clownLikeLevel >=0)) ){
-      System.out.print("\nI asked on a scale of 0 to 10.\n" + "Try again: ");      
-      clownLikeLevel = input.nextDouble();
+    while( tool.checkLevel(clownLikeLevel) ){
+      System.out.print("Try again: ");      
+      clownLikeLevel = input.next();
     }
     //
     

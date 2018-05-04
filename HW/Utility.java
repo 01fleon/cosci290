@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+
 public class Utility{
   
   //This method opens a file and prints each line
@@ -36,7 +37,25 @@ public class Utility{
 			e.printStackTrace();
 		}
 	}
-  
+  //checks if user's input for their likeness of clowns is ok
+  public boolean checkLevel(String level){
+    for(int i=0; i<level.length(); i++){
+      //checks if input is a number
+      if(! (Character.isDigit(level.charAt(i))) ){
+        //not a digit
+        System.out.println("Not acceptable.");
+        return true;
+      }
+    }
+    double num = Double.parseDouble(level);
+    //checks if input is in range
+    if(!((num <=10) && (num >=0))){
+      System.out.println("Number not in range.");
+      return true;
+    }
+    //else the input is good
+    return false;
+  }
  
   //ascii 
   public void splashPage(String scene){
