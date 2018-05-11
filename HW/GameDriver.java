@@ -40,6 +40,15 @@ public class GameDriver{
     }
     //
     
+    //lab 19
+      //part 10
+    //multi-array of student (soon to be rooms)
+    
+    Student[][] myStudents = new Student[5][5];
+    
+    //recursively iterate through mult-array  
+    
+    
     System.out.print(clownLikeLevel + " out of 10? Great! \nCause this place is full of them!\n \n"
                     + "Also, here's a cat.\n");
     tool.splashPage("cat");
