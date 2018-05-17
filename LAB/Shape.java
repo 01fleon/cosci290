@@ -3,11 +3,13 @@
   Co Sci 290
   
   Shape class based on student class.
+  Lab 20/21
 */
 
-public class Shape{
+public abstract class Shape{
   private double area;
   private String name;
+  private double measure;
   
   //zero-argument default constructor
   public Shape(){
@@ -32,7 +34,9 @@ public class Shape{
   }
   
   public String toString(){
-    return "Shape has area: " + this.area + " Major: " + this.name;
+    return "Shape has area: " + this.area + " Name: " + this.name;
   }
+  
+  public abstract double CalculateArea(double measure);
   
 }
